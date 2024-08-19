@@ -25,6 +25,7 @@ if (isset($_GET["id"])) {
     <link rel="stylesheet" href="src/resources/main.css">
 </head>
 <body>
+    <?php require "src/navbar.php" ?>
     <div class="container">
         <?php if ($poll): ?>
             <h1> Encuesta sobre: "<?=$poll->getTitle();?>" </h1>

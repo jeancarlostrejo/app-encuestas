@@ -31,6 +31,7 @@ if (isset($_POST["title"])) {
     <link rel="stylesheet" href="src/resources/main.css">
 </head>
 <body>
+    <?php require "src/navbar.php" ?>
     <form action="?view=options" method="POST" class="form">
         <h3>Options</h3>
         <input type="hidden" name="title" value="<?=$_POST["title"];?>">

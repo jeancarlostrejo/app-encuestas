@@ -14,7 +14,7 @@ $polls = Poll::getPolls();
     <link rel="stylesheet" href="src/resources/main.css">
 </head>
 <body>
-
+    <?php require "src/navbar.php";?>
 <div class="container">
     <h1>Encuestas creadas</h1>
     <?php if (empty($polls)): ?>

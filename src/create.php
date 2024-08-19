@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/resources/main.css">
 </head>
 <body>
+    <?php require "src/navbar.php" ?>
     <form action="?view=options" method="POST" class="form">
         <h1>Create a Poll</h1>
         <input type="text" name="title" placeholder="Title of poll" required>
