@@ -28,17 +28,17 @@ if (isset($_POST["title"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Options</title>
+    <link rel="stylesheet" href="src/resources/main.css">
 </head>
 <body>
-    <form action="?view=options" method="POST">
-        <h3>Questions</h3>
+    <form action="?view=options" method="POST" class="form">
+        <h3>Options</h3>
         <input type="hidden" name="title" value="<?=$_POST["title"];?>">
 
-        <input type="text" name="option[]" id="">
-        <input type="text" name="option[]" id="">
-
+        <input type="text" name="option[]" class="input">
+        <input type="text" name="option[]" class="input">
+        
         <div id="more-inputs">
-
         </div>
 
         <button id="bAdd">Add another option</button>

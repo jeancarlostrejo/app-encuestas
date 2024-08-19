@@ -11,9 +11,12 @@ $polls = Poll::getPolls();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="src/resources/main.css">
 </head>
 <body>
-    <h1>App de encuestas</h1>
+
+<div class="container">
+    <h1>Encuestas creadas</h1>
     <?php if (empty($polls)): ?>
         <h2>No hay encuestas creadas</h2>
     <?php else: ?>
@@ -21,5 +24,6 @@ $polls = Poll::getPolls();
             <div> <a href="?view=view&id=<?=$poll->getUUID();?>"> <?=$poll->getTitle();?> </a></div>
         <?php endforeach;?>
     <?php endif;?>
+</div>
 </body>
 </html>
