@@ -36,7 +36,7 @@ if (isset($_GET["id"])) {
             <?php 
                 $percentage = 0;
 
-                if(!$total !== 0) {
+                if($total !== 0) {
                     $percentage = number_format(($option["votes"] / $total) * 100,2);
                 }
             ?>

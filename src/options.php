@@ -13,11 +13,11 @@ if (isset($_POST["title"])) {
         $poll->insertOptions($options);
 
         header("Location: ?view=home");
-
+        die();
     }
-
 } else {
     header("Location: ?view=home");
+    die();
 }
 
 ?>
@@ -37,12 +37,42 @@ if (isset($_POST["title"])) {
         <input type="text" name="option[]" id="">
         <input type="text" name="option[]" id="">
 
-        <div id="more-input">
+        <div id="more-inputs">
 
         </div>
 
         <button id="bAdd">Add another option</button>
         <input type="submit" value="Create poll">
     </form>
+
+    <script>
+        const bAdd = document.querySelector("#bAdd");
+        const container = document.querySelector("#more-inputs");
+
+        bAdd.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const wrapper = document.createElement("div");
+            wrapper.classList.add("wrapper");
+
+            const deleteButton = document.createElement("button");
+            deleteButton.append("Delete");
+            deleteButton.addEventListener("click", e => {
+                e.preventDefault();
+                wrapper.remove();
+            });
+
+            const input = document.createElement("input");
+            input.name = "option[]";
+            input.type = "text";
+
+            input.classList.add("input");
+            input.placeholder = "Option";
+            wrapper.appendChild(input);
+            wrapper.appendChild(deleteButton);
+            container.appendChild(wrapper);
+
+        })
+    </script>
 </body>
 </html>
