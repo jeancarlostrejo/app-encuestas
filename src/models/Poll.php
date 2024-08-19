@@ -115,9 +115,19 @@ class Poll extends Database
         $this->uuid = $value;
     }
 
+    public function getUUID(): string
+    {
+        return $this->uuid;
+    }
+
     public function setId(int $value): void
     {
         $this->id = $value;
+    }
+
+    public function getTitle(): string
+    {
+        return $this->title;
     }
 
 }
