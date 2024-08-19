@@ -63,13 +63,17 @@ class Poll extends Database
         return $poll;
     }
 
-    public static function find(string $uuid): Poll
+    public static function find(string $uuid): Poll | null
     {
         $db = new Database();
 
         $query = $db->connect()->prepare("SELECT * FROM polls WHERE uuid = :uuid");
         $query->execute(["uuid" => $uuid]);
         $result = $query->fetch();
+
+        if($query->rowCount()<= 0){
+            return null;
+        }
 
         $poll = Poll::createFromArray($result);
 
@@ -128,6 +132,11 @@ class Poll extends Database
     public function getTitle(): string
     {
         return $this->title;
+    }
+
+    public function getOptions(): array
+    {
+        return $this->options;
     }
 
 }
