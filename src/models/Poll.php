@@ -94,7 +94,7 @@ class Poll extends Database
         return $poll;
     }
 
-    public function getTotalVotes(): void
+    public function getTotalVotes(): int
     {
         $total = 0;
 
